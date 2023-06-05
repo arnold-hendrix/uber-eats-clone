@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Categories() {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingBottom: 5}}>
       <View style={styles.categoryView}>
         <Image source={categories.pickUp.image} style={styles.categoryImage} />
         <Text style={styles.categoryText}>{categories.pickUp.text}</Text>
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     padding: 15,
     marginTop: 5,
-    backgroundColor: '#fff',
   },
     categoryImage: {
     width: 50,
