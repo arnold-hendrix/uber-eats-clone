@@ -10,9 +10,11 @@ const YELP_API_KEY =
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
+  const [city, setCity] = useState('Toronto');
+  const [error, setError] = useState(null);
 
   const getRestaurantsFromYelp = () => {
-    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=Toronto`;
+    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
     const apiOptions = {
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
@@ -22,18 +24,25 @@ export default function Home() {
     return fetch(yelpUrl, apiOptions)
       .then((res) => res.json())
       .then((json) => setRestaurantData(json.businesses))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      });
   };
 
   useEffect(() => {
+    setCity("Toronto");
+  }, [error]);
+  
+  useEffect(() => {
     getRestaurantsFromYelp();
-  }, []);
+  }, [city]);
 
   return (
     <SafeAreaView>
       <View style={{ padding: 15 }}>
         <HeaderTab />
-        <SearchBar />
+        <SearchBar cityHandler={setCity} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Categories />
