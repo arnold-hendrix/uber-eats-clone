@@ -48,7 +48,7 @@ const RestaurantImage = (props) => (
       source={{
         uri: props.image,
       }}
-      style={{ width: '100%', height: 180 }}
+      style={{ width: '100%', height: 180, borderRadius: 15 }}
     />
     <TouchableOpacity style={styles.heartOutline}>
       <MaterialCommunityIcons name="heart-outline" size={25} color={'white'} />

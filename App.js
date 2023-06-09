@@ -1,7 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './screens/Home';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import BottomTabs from './components/BottomTabs';
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#fff',
+    background: 'white',
+  },
+};
 
 export default function App() {
-  return <Home/>
+  return (
+    <NavigationContainer theme={MyTheme}>
+      <BottomTabs />
+    </NavigationContainer>
+  );
 }

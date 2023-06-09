@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
+import BottomTabs from '../components/BottomTabs';
 import Categories from '../components/Categories';
 import HeaderTab from '../components/HeaderTab';
 import Restaurants, { localRestaurants } from '../components/Restaurants';
@@ -31,9 +32,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    setCity("Toronto");
+    setCity('Toronto');
   }, [error]);
-  
+
   useEffect(() => {
     getRestaurantsFromYelp();
   }, [city]);
