@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
-import BottomTabs from '../components/BottomTabs';
-import Categories from '../components/Categories';
-import HeaderTab from '../components/HeaderTab';
-import Restaurants, { localRestaurants } from '../components/Restaurants';
-import SearchBar from '../components/SearchBar';
+import Categories from './Categories';
+import HeaderTab from './HeaderTab';
+import Restaurants, { localRestaurants } from './Restaurants';
+import SearchBar from './SearchBar';
 
 const YELP_API_KEY =
   'vs0zZJcXczqwc-yrqQT_fjGu-g3ACc6RAiKWcXoiJ-966QtuTTru9jbbDFqgrB6jLHcon5YZOWIp2D9vcOaqoNS4YNeV3psbvOr89klvE9WZYhVpDgfq-W1p1Dh-ZHYx';
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState('Toronto');
   const [error, setError] = useState(null);
@@ -50,7 +49,10 @@ export default function Home() {
         <View
           style={{ backgroundColor: '#eee', paddingBottom: 8, paddingTop: 8 }}
         >
-          <Restaurants restaurantData={restaurantData} />
+          <Restaurants
+            restaurantData={restaurantData}
+            navigation={navigation}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

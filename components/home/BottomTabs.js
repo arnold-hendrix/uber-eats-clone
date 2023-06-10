@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import Account from '../screens/Account';
-import Browse from '../screens/Browse';
-import Carts from '../screens/Carts';
-import Home from '../screens/Home';
+import AccountScreen from '../../screens/AccountScreen';
+import BrowseScreen from '../../screens/BrowseScreen';
+import CartScreen from '../../screens/CartScreen';
+import Home from './Home';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const Tab = createBottomTabNavigator();
@@ -39,7 +39,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Browse"
-        component={Browse}
+        component={BrowseScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <FontAwesome5
@@ -52,7 +52,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Cart"
-        component={Carts}
+        component={CartScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <FontAwesome5
@@ -65,7 +65,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Account"
-        component={Account}
+        component={AccountScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <FontAwesome5

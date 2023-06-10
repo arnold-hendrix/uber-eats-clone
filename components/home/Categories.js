@@ -38,31 +38,31 @@ export default function Categories() {
 
 const categories = {
   pickUp: {
-    image: require('../assets/images/images/shopping-bag.png'),
+    image: require('../../assets/images/images/shopping-bag.png'),
     text: 'Pick-up',
   },
   softDrinks: {
-    image: require('../assets/images/images/soft-drink.png'),
+    image: require('../../assets/images/images/soft-drink.png'),
     text: 'Soft Drinks',
   },
   bakedGoods: {
-    image: require('../assets/images/images/bread.png'),
+    image: require('../../assets/images/images/bread.png'),
     text: 'Bakery Items',
   },
   fastFood: {
-    image: require('../assets/images/images/fast-food.png'),
+    image: require('../../assets/images/images/fast-food.png'),
     text: 'Fast Food',
   },
   deals: {
-    image: require('../assets/images/images/deals.png'),
+    image: require('../../assets/images/images/deals.png'),
     text: 'Deals',
   },
   coffee: {
-    image: require('../assets/images/images/coffee.png'),
+    image: require('../../assets/images/images/coffee.png'),
     text: 'Coffee & Tea',
   },
   desserts: {
-    image: require('../assets/images/images/desserts.png'),
+    image: require('../../assets/images/images/desserts.png'),
     text: 'Desserts',
   },
 };
